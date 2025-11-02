@@ -4,7 +4,6 @@
 
 #include <cmath>
 
-#include "gpio.h"
 #include "motor.h"
 #include "servo.h"
 #include "pid.h"
@@ -127,7 +126,7 @@ int main() {
 
 
     //初始化
-    gpio_init();
+    //gpio_init();
     signal(SIGINT, signal_handler);    // 注册信号处理函数：捕获 Ctrl+C
     if (!pca_init()) {
         std::cerr << "Failed to initialize PCA9685 driver!" << std::endl;
@@ -203,7 +202,7 @@ int main() {
 
     std::cout << "[INFO] All threads joined. Releasing resources..." << std::endl;
     pca_close();
-    gpio_release();
+    //gpio_release();
     SaveResultsToCSV("lane_result.csv");
     std::cout << "[INFO] Program finished." << std::endl;
     return 0;

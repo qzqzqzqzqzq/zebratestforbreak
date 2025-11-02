@@ -642,7 +642,7 @@ void searchZebraCrossing(const cv::Mat& frame_clone)
     if (ZebraInformation.final_found_rxd == true)
     {
         std::cout << "Rxd find" << std::endl;
-        send_message("STOP");
+        send_message("Stop");
         //VisionTaskState = State::SearchLaneChangeMarker;
     }
     /**
